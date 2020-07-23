@@ -8,16 +8,44 @@ public class Les2 {
     public static void main(String[] args) {
 
         int[] array = {1, 1, 0, 0, 1, 0, 1, 1, 0, 0};
-
+        int[] arrayShift = {1,2,3,4,5,6,7};
 
     replace(array);               //1
         fill();                   //2
     multiplication();             //3
-        square();                 //4
-        errMinMax(errRandom());   //5
-        checkAmount(array);       //6
+      square();                   //4
+       errMinMax(errRandom());    //5
+       checkAmount(array);        //6
+        shift(arrayShift, -2); //7
 
     }
+
+// 7 Задание
+
+    public static void /*int[]*/ shift(int[] arr, int n){
+
+        System.out.println(Arrays.toString(arr));
+
+        if (n > arr.length-1){
+            n = n - arr.length;
+        } else if (n < 0) {
+            n = arr.length + n;
+        }
+
+
+        for (int i = 0; i < n; i++) {
+            int  b = arr[arr.length-1];
+            int j = arr.length - 1;
+            while ((j -1) >= 0) {
+                arr[j] = arr[j-1];
+                j --;
+            }
+arr[0] = b;
+        }
+
+            System.out.println(Arrays.toString(arr));
+
+        }
 
 
 
